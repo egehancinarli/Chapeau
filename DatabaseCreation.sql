@@ -1,0 +1,88 @@
+﻿DROP TABLE OrderItem;
+DROP TABLE [Order];
+Drop Table Category;
+DROP TABLE Employee;
+DROP TABLE EmployeeType;
+DROP TABLE Empolyee;
+DROP TABLE MenuItem;
+DROP TABLE OrderState;
+DROP TABLE Reservation;
+DROP TABLE [Table];
+
+CREATE TABLE EmployeeType 
+(
+	EmployeeTypeKey VARCHAR(2) NOT NULL PRIMARY KEY,
+	EmployeeType VARCHAR(45) NOT NULL
+);
+GO
+CREATE TABLE Employee
+(
+	EmployeeID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	EmplyeeTypeKey VARCHAR(2) NOT NULL FOREIGN KEY REFERENCES EmployeeType(EmployeeTypeKey) ON DELETE NO ACTION ON UPDATE CASCADE,
+	[Name] VARCHAR(45) NOT NULL,
+	Username VARCHAR(45) NOT NULL,
+	[Password] VARCHAR(45) NOT NULL
+);
+GO
+CREATE TABLE [Table]
+(
+	TableNumber INT NOT NULL PRIMARY KEY,
+	Capacity INT NOT NULL DEFAULT 2,
+	IsOccupied BIT NOT NULL DEFAULT 0
+);
+GO
+CREATE TABLE Reservation
+(
+	ReservationID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	TableNumber INT NOT NULL FOREIGN KEY REFERENCES [Table](TableNumber) ON DELETE NO ACTION ON UPDATE CASCADE,
+	ReservationDate DATETIME NOT NULL,
+	PhoneNumber VARCHAR(15) NOT NULL,
+	ReserverName VARCHAR(45) NOT NULL
+);
+GO
+CREATE TABLE [Order]
+(
+	OrderID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	TableNumber INT NOT NULL FOREIGN KEY REFERENCES [Table](TableNumber) ON DELETE NO ACTION ON UPDATE CASCADE,
+	EmployeeID INT NULL FOREIGN KEY REFERENCES Employee(EmployeeID) ON DELETE SET NULL ON UPDATE CASCADE,
+	TotalPriceVAT FLOAT NOT NULL,
+	TotalPriceNoVAT FLOAT NOT NULL,
+	PaymentMethod VARCHAR(45) NOT NULL,
+	PaymentDateTime DateTime NOT NULL
+);
+GO
+CREATE TABLE Category
+(
+	CategoryID VARCHAR(3) NOT NULL PRIMARY KEY,
+	CategoryType VARCHAR(45) NOT NULL,
+	VAT INT NOT NULL
+);
+GO
+CREATE TABLE MenuItem
+(
+	MenuItemID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	CategoryID VARCHAR(3) NOT NULL FOREIGN KEY REFERENCES Category(CategoryID) ON DELETE NO ACTION ON UPDATE CASCADE,
+	ItemName VARCHAR(45) NOT NULL,
+	Price FLOAT NOT NULL,
+	Stock INT NOT NULL,
+	[Description] VARCHAR(200)
+);
+GO
+CREATE TABLE OrderState
+(
+	OrderStateKey VARCHAR(3) NOT NULL PRIMARY KEY,
+	OrderStateInformation VARCHAR(45) NOT NULL
+);
+GO
+CREATE TABLE [dbo].[OrderItem] (
+	[ID]				INT			NOT NULL PRIMARY KEY IDENTITY(1,1),
+    [OrderID]          INT         NOT NULL,
+    [MenuItemID]       INT         NOT NULL,
+    [OrderStateKey]    VARCHAR (3) NOT NULL,
+    [Amount]           INT         DEFAULT ((1)) NOT NULL,
+    [LastStateChanged] DATETIME    NOT NULL,
+    [OrderDateTime]    DATETIME    NOT NULL,
+    FOREIGN KEY ([OrderID]) REFERENCES [dbo].[Order] ([OrderID]) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY ([MenuItemID]) REFERENCES [dbo].[MenuItem] ([MenuItemID]) ON UPDATE CASCADE,
+    FOREIGN KEY ([OrderStateKey]) REFERENCES [dbo].[OrderState] ([OrderStateKey]) ON UPDATE CASCADE
+);
