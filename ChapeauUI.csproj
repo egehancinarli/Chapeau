@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC85D533-AD47-4269-B38B-B6EBEBECD538}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ChapeauUI</RootNamespace>
+    <AssemblyName>ChapeauUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomControls\TransparentTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemForm.Designer.cs">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenBarScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitchenBarScreen.Designer.cs">
+      <DependentUpon>KitchenBarScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginScreen.Designer.cs">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableView.Designer.cs">
+      <DependentUpon>TableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\OrderingConfirmation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\OrderingConfirmation.Designer.cs">
+      <DependentUpon>OrderingConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\OrderingRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManagerScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerScreen.Designer.cs">
+      <DependentUpon>ManagerScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\OrderingRow.Designer.cs">
+      <DependentUpon>OrderingRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderingScreen.Designer.cs">
+      <DependentUpon>OrderingScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentScreen.Designer.cs">
+      <DependentUpon>PaymentScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservationForm.Designer.cs">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableDisplay.Designer.cs">
+      <DependentUpon>TableDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\UCReservationForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\UCReservationForm.Designer.cs">
+      <DependentUpon>UCReservationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlls\UCCurrentOrders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlls\UCCurrentOrders.Designer.cs">
+      <DependentUpon>UCCurrentOrders.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemForm.resx">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitchenBarScreen.resx">
+      <DependentUpon>KitchenBarScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginScreen.resx">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableView.resx">
+      <DependentUpon>TableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\OrderingConfirmation.resx">
+      <DependentUpon>OrderingConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\OrderingRow.resx">
+      <DependentUpon>OrderingRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerScreen.resx">
+      <DependentUpon>ManagerScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderingScreen.resx">
+      <DependentUpon>OrderingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentScreen.resx">
+      <DependentUpon>PaymentScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ReservationForm.resx">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableDisplay.resx">
+      <DependentUpon>TableDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\UCReservationForm.resx">
+      <DependentUpon>UCReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlls\UCCurrentOrders.resx">
+      <DependentUpon>UCCurrentOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChapeauDAL\ChapeauDAL.csproj">
+      <Project>{F4144716-E99A-4E0A-B1F7-AF4C6DF1DD9B}</Project>
+      <Name>ChapeauDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChapeauLogic\ChapeauLogic.csproj">
+      <Project>{0de9306e-1de0-4d85-82e9-49f7cb7b5e05}</Project>
+      <Name>ChapeauLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChapeauModel\ChapeauModel.csproj">
+      <Project>{9ca33d7b-94fc-4ec1-8666-eda3116a667e}</Project>
+      <Name>ChapeauModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chapeauLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reserve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eating.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WarningTimer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Occupy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Occupy2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Occupy3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Occupy4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Occupy5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Occupy6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Occupy7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Occupy8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Occupy9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Occupy10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tableReserved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passwordClosed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passwordOpen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Closedeye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenEye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drinkOccupy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Booked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditIcon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
